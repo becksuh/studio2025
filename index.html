@@ -12596,7 +12596,7 @@ function buildCurtainHTML(secKey, area) {
       <div style="font-size:11px;font-weight:600;color:var(--ws-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Материал / Үнэ</div>
       ${c.matList.length===0?`<div style="font-size:11px;color:var(--ws-muted);padding:20px 0;text-align:center;opacity:.5">Цонх нэмнэ үү →</div>`:''}
       ${c.matList.map(m=>`<div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid var(--ws-border)${area._excludedMats&&area._excludedMats[m.key]?';opacity:.35;text-decoration:line-through':''}">
-        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><span style="flex:1;font-size:11px;color:var(--ws-dim)">${m.name}</span>
+        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><div style="flex:1;min-width:0"><span style="font-size:11px;color:var(--ws-dim)">${m.name}</span>${typeof _ipBadge==='function'?_ipBadge(m.key):''}</div>
         <span style="font-size:11px;font-family:var(--mono);color:var(--ws-muted);min-width:44px;text-align:right">${m.qty}${m.unit}</span>
         <input type="text" inputmode="decimal" value="${cv.prices[m.key]||''}" placeholder="0"
           style="width:72px;text-align:right;padding:2px 5px;font-size:11px;font-family:var(--mono);border:1px solid var(--ws-border);border-radius:3px;background:var(--ws-surface);color:var(--ws-text);outline:none"
@@ -12679,7 +12679,7 @@ function buildWindowHTML(secKey, area) {
     <div>
       <div style="font-size:11px;font-weight:600;color:var(--ws-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Материал / Үнэ</div>
       ${c.mats.map(m=>`<div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid var(--ws-border)${area._excludedMats&&area._excludedMats[m.key]?';opacity:.35;text-decoration:line-through':''}">
-        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><span style="flex:1;font-size:11px;color:var(--ws-dim)">${m.name}</span>
+        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><div style="flex:1;min-width:0"><span style="font-size:11px;color:var(--ws-dim)">${m.name}</span>${typeof _ipBadge==='function'?_ipBadge(m.key):''}</div>
         <span style="font-size:11px;font-family:var(--mono);color:var(--ws-muted);min-width:40px;text-align:right">${m.qty}${m.unit}</span>
         <input type="text" inputmode="decimal" value="${w.prices[m.key]||''}" placeholder="0"
           style="width:72px;text-align:right;padding:2px 5px;font-size:11px;font-family:var(--mono);border:1px solid var(--ws-border);border-radius:3px;background:var(--ws-surface);color:var(--ws-text);outline:none"
@@ -12769,7 +12769,7 @@ function buildCircuitHTML(secKey, area) {
       <div style="margin-bottom:12px">${circuitSvg(e)}</div>
       <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Материал / Үнэ</div>
       ${c.mats.map(m=>`<div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid var(--ws-border)${area._excludedMats&&area._excludedMats[m.key]?';opacity:.35;text-decoration:line-through':''}">
-        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><span style="flex:1;font-size:11px;color:var(--ws-dim)">${m.name}</span>
+        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><div style="flex:1;min-width:0"><span style="font-size:11px;color:var(--ws-dim)">${m.name}</span>${typeof _ipBadge==='function'?_ipBadge(m.key):''}</div>
         <span style="font-size:11px;font-family:var(--mono);color:var(--ws-muted);min-width:36px;text-align:right">${m.qty}${m.unit}</span>
         <input type="text" inputmode="decimal" value="${e.prices[m.key]||''}" placeholder="0"
           style="width:72px;text-align:right;padding:2px 5px;font-size:11px;font-family:var(--mono);border:1px solid var(--ws-border);border-radius:3px;background:var(--ws-surface);color:var(--ws-text);outline:none"
@@ -12868,7 +12868,7 @@ function buildWetRoomHTML(secKey, area) {
       <div style="margin-bottom:12px">${wetSvg(w)}</div>
       <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;color:var(--ws-muted)">Материал / Үнэ</div>
       ${c.mats.filter(m=>m.qty>0).map(m=>`<div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid var(--ws-border)${area._excludedMats&&area._excludedMats[m.key]?';opacity:.35;text-decoration:line-through':''}">
-        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><span style="flex:1;font-size:11px;color:var(--ws-dim)">${m.name}</span>
+        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><div style="flex:1;min-width:0"><span style="font-size:11px;color:var(--ws-dim)">${m.name}</span>${typeof _ipBadge==='function'?_ipBadge(m.key):''}</div>
         <span style="font-size:11px;font-family:var(--mono);color:var(--ws-muted);min-width:40px;text-align:right">${m.qty}${m.unit}</span>
         <input type="text" inputmode="decimal" value="${w.prices[m.key]||''}" placeholder="0"
           style="width:72px;text-align:right;padding:2px 5px;font-size:11px;font-family:var(--mono);border:1px solid var(--ws-border);border-radius:3px;background:var(--ws-surface);color:var(--ws-text);outline:none"
@@ -12953,7 +12953,7 @@ function buildStairHTML(secKey, area) {
     <div>
       <div style="font-size:11px;font-weight:600;color:var(--ws-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Материал / Үнэ</div>
       ${c.mats.map(m=>`<div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid var(--ws-border)${area._excludedMats&&area._excludedMats[m.key]?';opacity:.35;text-decoration:line-through':''}">
-        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><span style="flex:1;font-size:11px;color:var(--ws-dim)">${m.name}</span>
+        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><div style="flex:1;min-width:0"><span style="font-size:11px;color:var(--ws-dim)">${m.name}</span>${typeof _ipBadge==='function'?_ipBadge(m.key):''}</div>
         <span style="font-size:11px;font-family:var(--mono);color:var(--ws-muted);min-width:40px;text-align:right">${m.qty}${m.unit}</span>
         <input type="text" inputmode="decimal" value="${s.prices[m.key]||''}" placeholder="0"
           style="width:72px;text-align:right;padding:2px 5px;font-size:11px;font-family:var(--mono);border:1px solid var(--ws-border);border-radius:3px;background:var(--ws-surface);color:var(--ws-text);outline:none"
@@ -13029,7 +13029,7 @@ function buildRaisedFloorHTML(secKey, area) {
     <div>
       <div style="font-size:11px;font-weight:600;color:var(--ws-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Материал / Үнэ</div>
       ${c.mats.map(m=>`<div style="display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid var(--ws-border)${area._excludedMats&&area._excludedMats[m.key]?';opacity:.35;text-decoration:line-through':''}">
-        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><span style="flex:1;font-size:11px;color:var(--ws-dim)">${m.name}</span>
+        <button onclick="event.stopPropagation();openCatalogPicker('${m.key}','${secKey||'general'}','${m.name.replace(/'/g,"\\'")}');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button><div style="flex:1;min-width:0"><span style="font-size:11px;color:var(--ws-dim)">${m.name}</span>${typeof _ipBadge==='function'?_ipBadge(m.key):''}</div>
         <span style="font-size:11px;font-family:var(--mono);color:var(--ws-muted);min-width:40px;text-align:right">${m.qty}${m.unit}</span>
         <input type="text" inputmode="decimal" value="${r.prices[m.key]||''}" placeholder="0"
           style="width:72px;text-align:right;padding:2px 5px;font-size:11px;font-family:var(--mono);border:1px solid var(--ws-border);border-radius:3px;background:var(--ws-surface);color:var(--ws-text);outline:none"
@@ -13718,7 +13718,7 @@ function _matRow(m, price, storeKey, aid){
           +'">'+esc((o.supplierName||o.supplier||'').split(' ')[0])+' '+Math.round((o.price||0)/1000)+'K</button>';
       }).join('')
       +'</div>'
-    : '';
+    : '<div style="margin-top:3px">'+_ipBadge(storeKey)+'</div>';
   var _excl=(function(){var r=getArea(aid);return r&&r.area&&r.area._excludedMats&&r.area._excludedMats[storeKey];}());
   var nameHtml='<div>'
     +'<div style="display:flex;align-items:center;gap:4px">'
@@ -13759,6 +13759,12 @@ function advSetPrice(aid, storeKey, val){
   _sysTotalsCacheBust(); // area._prices change → invalidate cached totals
   clearTimeout(window._advPT);
   window._advPT=setTimeout(function(){_commitChange();},500);
+}
+/** Default InteriorPro badge — shown when no approved offers exist for a material key */
+function _ipBadge(key){
+  var _of=typeof getApprovedOffers==='function'?getApprovedOffers(key):[];
+  if(_of.length)return '';
+  return '<span style="font-size:8px;padding:1px 5px;border-radius:3px;font-family:var(--mono);background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.18);color:rgba(99,102,241,.55);display:inline-block;margin-top:2px">InteriorPro</span>';
 }
 /** area._prices дахь үнийг авна, байхгүй бол S.prices fallback */
 function _advPrice(area, key){
@@ -14479,6 +14485,7 @@ function buildPaintWallHTML(secKey, area){
       +'<div style="font-size:11px;color:var(--dim);font-weight:500">'+name+'</div>'
       +'</div>'
       +(formula?'<div style="font-size:9px;color:var(--muted);margin-top:1px;padding-left:20px">'+formula+'</div>':'')
+      +'<div style="margin-top:2px">'+_ipBadge(key)+'</div>'
       +'</div>'
       +'<div style="text-align:right;font-size:11px;color:var(--text);font-family:var(--mono);font-weight:600;padding-top:1px">'+qty+' <span style="font-size:9px;color:var(--muted)">'+unit+'</span></div>'
       +'<input type="text" inputmode="decimal" value="'+(price||'')+'" placeholder="0₮"'
@@ -15787,6 +15794,7 @@ function buildEmulsionCeilHTML(secKey, area){
       +'<span style="font-size:11px;color:var(--dim)">'+name+'</span>'
       +'</div>'
       +(note?'<div style="font-size:9px;color:var(--muted);margin-top:2px;font-family:var(--mono);padding-left:20px">'+note+'</div>':'')
+      +'<div style="margin-top:2px">'+_ipBadge(key)+'</div>'
       +'</div>'
       +'<div style="text-align:right;padding-top:2px"><span style="font-size:11px;font-family:var(--mono);font-weight:600">'+qty+'</span>'
       +' <span style="font-size:9px;color:var(--muted)">'+unit+'</span></div>'
@@ -15919,7 +15927,7 @@ function _simMatRow(key,name,note,qty,unit,price,aid){
     +'<button onclick="event.stopPropagation();openCatalogPicker(\''+key+'\',\''+(typeof S!=="undefined"&&S.sec||'general')+'\',\''+name.replace(/'/g,"\\'")+'\');return false" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:rgba(99,102,241,.9);font-size:12px;font-weight:700;width:16px;height:16px;border-radius:3px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0" title="Нийлүүлэгч / дэлгүүр сонгох">+</button>'
     +'<span style="font-size:11px;color:var(--dim)">'+esc(name)+'</span></div>'
     +(note?'<div style="font-size:9px;color:var(--muted);margin-top:2px;font-family:var(--mono);line-height:1.3">'+esc(note)+'</div>':'')
-    +(function(){var _of=typeof getApprovedOffers==='function'?getApprovedOffers(key):[];if(!_of.length)return '';return '<div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:4px">'+_of.slice(0,3).map(function(o){var isA=price&&price===o.price;return '<button onclick="advSetPrice('+aid+',\''+key+'\','+o.price+');renderSection()" style="font-size:8px;padding:1px 5px;border-radius:3px;cursor:pointer;font-family:var(--mono);'+(isA?'background:rgba(99,102,241,.2);border:1px solid rgba(99,102,241,.5);color:#818cf8':'background:var(--card2);border:1px solid var(--border2);color:var(--muted)')+'">'+esc((o.supplierName||o.supplier||'').split(' ')[0])+' '+Math.round((o.price||0)/1000)+'K</button>';}).join('')+'</div>';})()
+    +(function(){var _of=typeof getApprovedOffers==='function'?getApprovedOffers(key):[];if(!_of.length)return '<div style="margin-top:3px">'+_ipBadge(key)+'</div>';return '<div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:4px">'+_of.slice(0,3).map(function(o){var isA=price&&price===o.price;return '<button onclick="advSetPrice('+aid+',\''+key+'\','+o.price+');renderSection()" style="font-size:8px;padding:1px 5px;border-radius:3px;cursor:pointer;font-family:var(--mono);'+(isA?'background:rgba(99,102,241,.2);border:1px solid rgba(99,102,241,.5);color:#818cf8':'background:var(--card2);border:1px solid var(--border2);color:var(--muted)')+'">'+esc((o.supplierName||o.supplier||'').split(' ')[0])+' '+Math.round((o.price||0)/1000)+'K</button>';}).join('')+'</div>';})()
     +'</div>'
     +'<div style="text-align:right;padding-top:2px">'
     +'<span style="font-size:11px;font-family:var(--mono);font-weight:600">'+qty+'</span>'
