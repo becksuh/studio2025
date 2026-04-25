@@ -15,6 +15,5 @@
   for = "/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ylctabcacnipiojepfwl.supabase.co https://script.google.com https://ip-api.com https://www.google-analytics.com https://api.resend.com; frame-ancestors 'self' https://studio2025.info https://www.studio2025.info; base-uri 'self'; form-action 'self';"
-    X-Frame-Options = ""
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
