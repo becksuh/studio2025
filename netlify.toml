@@ -6,3 +6,13 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Allow the Studio 2025 main site (and its www. variant) to embed
+# this calculator in an iframe — the chat widget on studio2025.info
+# pops a modal that loads this app inline. Modern browsers honor
+# CSP frame-ancestors; we leave X-Frame-Options off because its
+# ALLOW-FROM directive is no longer supported.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'self' https://studio2025.info https://www.studio2025.info"
